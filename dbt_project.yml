@@ -1,0 +1,9 @@
+name: dbt-jaffle-fusion
+profile: dbt_fusion_test
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
