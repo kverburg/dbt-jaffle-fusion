@@ -1,0 +1,35 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.dbt,target=/root/.dbt,type=bind", // Bind mount for dbt profiles and cloud credentials
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind" // Bind mount for SSH keys
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dbt.dbtPath": "/root/.local/bin/dbt",
+        "files.associations": {
+          "*.sql": "sql",
+          "*.yml": "yaml"
+        },
+        "[sql]": {
+          "editor.defaultFormatter": "dbtLabsInc.dbt",
+          "editor.formatOnSave": true
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "dbtLabsInc.dbt",
+          "editor.formatOnSave": true
+        }
+      },
+      "extensions": [
+        "dbtLabsInc.dbt",
+        "mechatroner.rainbow-csv"
+      ]
+    }
+  },
+  "onCreateCommand": {
+    "sqlfluff_alias":"echo 'alias sqlfluff=\"dbt sqlfluff\"' >> ~/.zshrc"
+  }
+}
