@@ -1,4 +1,4 @@
-name: dbt-jaffle-fusion
+name: dbt_jaffle_fusion
 profile: dbt_fusion_test
 
 seed-paths: ["seeds"]
