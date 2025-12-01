@@ -1,0 +1,5 @@
+packages:
+  - git: https://github.com/kverburg/dbt-test-package
+    name: test_package
+    revision: 41f10d99c07c7a181694c599f2bd9bd5cb327eb7
+sha1_hash: dacb49c624cb4d40857a7fbe9dfcf70dcf041aab

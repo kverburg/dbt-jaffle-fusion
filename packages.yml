@@ -1,0 +1,3 @@
+packages:
+  - git: "https://github.com/kverburg/dbt-test-package" 
+    revision: main 
