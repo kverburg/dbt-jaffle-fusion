@@ -1,0 +1,1 @@
+select * from {{ref('this_does_not_exist')}}
