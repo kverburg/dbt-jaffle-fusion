@@ -7,3 +7,4 @@ macro-paths: ["macros"]
 clean-targets:
   - "target"
   - "dbt_packages"
+
